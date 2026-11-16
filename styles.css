@@ -317,7 +317,7 @@ nav a:hover:after {
     align-items: center;
     gap: 10px;
     color: #ff8588;
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 900;
     letter-spacing: 3px;
     margin-bottom: 20px;
@@ -836,7 +836,7 @@ body:not(.loading) .glitch span:after,
 
 /* ---------- FOOTER ---------- */
 
-.wall {
+/*.wall {
     position: relative;
     height: 230px;
     overflow: hidden;
@@ -847,7 +847,7 @@ body:not(.loading) .glitch span:after,
         linear-gradient(90deg,#0000 0 96%,#ffffff12 96%);
     background-size: 100% 36px,90px 36px;
 }
-
+*/
 .tag {
     position: absolute;
     font: clamp(40px,7vw,96px) Bangers;
