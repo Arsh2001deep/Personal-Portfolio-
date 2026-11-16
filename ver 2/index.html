@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arshdeep | The Amazing Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bangers&family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="loading">
+
+<!-- Page-load wipe -->
+<div class="wipe" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><span>LOADING UNIVERSE…</span></div>
+<div class="progress" aria-hidden="true"></div>
+<div id="spider-cursor" aria-hidden="true"></div>
+
+<!-- Graffiti filter shared by both street-art characters -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+ <filter id="spray"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.4"/></filter>
+</svg>
+
+<!-- Rescue scene: LEGO Spider-Man hangs upside-down from his web and catches Gwen's hand. One pendulum, one line. -->
+<div class="hang" id="hang" aria-hidden="true">
+ <div class="thread"></div>
+ <div class="got">GOT YOU!</div>
+ <svg class="rescue" viewBox="0 0 140 470" filter="url(#spray)">
+  <g stroke="#061323" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
+   <path d="M60 0V30" stroke="#fff" stroke-width="3"/>
+   <rect x="32" y="28" width="28" height="14" rx="5" fill="#e62429"/><rect x="60" y="28" width="28" height="14" rx="5" fill="#e62429"/>
+   <rect x="36" y="40" width="22" height="60" rx="5" fill="#0b3970"/><rect x="62" y="40" width="22" height="60" rx="5" fill="#0b3970"/>
+   <rect x="34" y="98" width="52" height="18" rx="4" fill="#0b3970"/>
+   <path d="M36 114H84L92 172H28Z" fill="#e62429"/>
+   <path d="M60 126L52 146H68ZM60 146V160" fill="#061323" stroke-width="2"/>
+   <path d="M96 160L88 252" stroke-width="22"/><path d="M96 160L88 252" stroke="#e62429" stroke-width="14"/>
+   <path d="M24 160L12 226" stroke-width="22"/><path d="M24 160L12 226" stroke="#e62429" stroke-width="14"/>
+   <rect x="38" y="170" width="44" height="34" rx="9" fill="#e62429"/><rect x="47" y="202" width="26" height="12" rx="3" fill="#e62429"/>
+   <path d="M44 184L58 191L56 199L44 195Z M76 184L62 191L64 199L76 195Z" fill="#fff" stroke-width="2.5"/>
+   <path d="M60 171V204M40 188H80M44 198H76" stroke-width="1.6" fill="none"/>
+   <circle cx="88" cy="258" r="9" fill="#0b3970"/><circle cx="12" cy="230" r="9" fill="#0b3970"/>
+   <!-- Gwen, dangling from Spider-Man's grip -->
+   <g transform="rotate(-6 86 270)">
+    <path d="M56 396L50 450" stroke-width="18"/><path d="M56 396L50 450" stroke="#fff" stroke-width="10"/>
+    <path d="M72 396L80 446" stroke-width="18"/><path d="M72 396L80 446" stroke="#fff" stroke-width="10"/>
+    <rect x="41" y="448" width="18" height="11" rx="4" fill="#061323"/><rect x="72" y="444" width="18" height="11" rx="4" fill="#061323"/>
+    <path d="M48 330Q62 322 82 330L78 396Q62 404 50 396Z" fill="#fff"/>
+    <path d="M52 372H78" stroke="#ff5fa8" stroke-width="5"/><path d="M52 381H78" stroke="#35e0e6" stroke-width="3"/>
+    <path d="M52 336L34 384" stroke-width="16"/><path d="M52 336L34 384" stroke="#fff" stroke-width="8"/><circle cx="34" cy="387" r="6" fill="#fff"/>
+    <circle cx="56" cy="308" r="25" fill="#061323"/>
+    <path d="M31 304Q34 278 58 280Q82 280 81 306Q68 292 56 292Q42 292 31 304Z" fill="#fff"/>
+    <ellipse cx="56" cy="314" rx="15" ry="17" fill="#fff" stroke-width="2.5"/>
+    <path d="M44 308L56 313L54 320L44 316Z M68 308L56 313L58 320L68 316Z" fill="#061323" stroke-width="2"/>
+    <path d="M32 306L31 330M80 306L81 330" stroke="#ff5fa8" stroke-width="6"/><path d="M37 308L36 330M75 308L76 330" stroke="#35e0e6" stroke-width="3"/>
+    <path d="M74 336L90 272" stroke-width="16"/><path d="M74 336L90 272" stroke="#fff" stroke-width="8"/><circle cx="88" cy="270" r="7" fill="#fff"/>
+   </g>
+  </g>
+ </svg>
+</div>
+
+<div class="site">
+ <div class="halftone"></div>
+ <header>
+  <a class="brand" href="#story">ARSHDEEP // HERO FILES</a>
+  <nav id="nav"><a href="#story">THE STORY</a><a href="#powers">THE JOURNEY</a><a href="#multiverse">THE MULTIVERSE</a><a href="#city">CONTACT</a></nav>
+  <button class="menu" id="menu" aria-label="Toggle navigation">☰</button>
+ </header>
+
+ <main class="hero" id="story">
+  <div class="copy">
+   <div class="eyebrow">A new origin story begins</div>
+   <h1 class="glitch" data-t="Meet">Meet <span data-t="Arshdeep.">Arshdeep.</span></h1>
+   <div class="sub">One life. A thousand possibilities.</div>
+   <p class="intro">Every hero has an origin story. This is mine — a journey through technology, creativity, experiments, ambitions and everything still waiting to happen.</p>
+   <div class="actions"><a class="btn primary" href="#multiverse">See my universes</a><a class="btn secondary" href="#city">Get in touch</a></div>
+  </div>
+  <div class="portrait-wrap">
+   <div class="burst"></div><div class="web-line"></div>
+   <div class="photo-frame" id="photo">
+    <img class="base" src="Me.jpeg" alt="Portrait of Arshdeep">
+    <div class="fx" aria-hidden="true"><img src="Me.jpeg" alt="">
+     <svg class="web" viewBox="-50 -50 100 100"><g id="w"><path d="M0 0L50 0M0 0L43 25M0 0L25 43M0 0L0 50M0 0L-25 43M0 0L-43 25M0 0L-50 0M0 0L-43 -25M0 0L-25 -43M0 0L0 -50M0 0L25 -43M0 0L43 -25"/>
+     <path d="M12 0Q10 6 10 6M12 0L10 7L6 10L0 12L-6 10L-10 7L-12 0L-10 -7L-6 -10L0 -12L6 -10L10 -7ZM26 0L22 13L13 22L0 26L-13 22L-22 13L-26 0L-22 -13L-13 -22L0 -26L13 -22L22 -13ZM40 0L35 20L20 35L0 40L-20 35L-35 20L-40 0L-35 -20L-20 -35L0 -40L20 -35L35 -20Z"/></g></svg>
+    </div>
+    <svg class="tingle" viewBox="0 0 90 90"><path d="M8 46L2 24M26 30L14 12M44 14L40 0M62 26L76 10M74 44L90 38"/></svg>
+    <span class="sense-tag">SPIDEY-SENSE!</span>
+   </div>
+   <div class="sticker">THE MAIN CHARACTER!</div>
+  </div>
+  <div class="scroll">SCROLL TO DISCOVER</div>
+ </main>
+
+ <div class="ticker"><div>
+  <span>✦ <b>CURIOUS MIND</b></span><span>⚡ BUILDING THINGS</span><span>✦ ALWAYS LEARNING</span><span>⚡ THE NEXT CHAPTER</span>
+  <span>✦ <b>CURIOUS MIND</b></span><span>⚡ BUILDING THINGS</span><span>✦ ALWAYS LEARNING</span><span>⚡ THE NEXT CHAPTER</span>
+ </div></div>
+</div>
+
+<section class="section reveal" id="powers">
+ <h2>The story is still being written.</h2>
+ <p>From software and automation to AI, aerospace and ambitious side projects — this is where the different chapters of my journey come together.</p>
+</section>
+
+<!-- THE MULTIVERSE: projects are data-driven from js/projects.js -->
+<section class="multiverse" id="multiverse">
+ <div class="mv-head reveal">
+  <h2>The Multiverse</h2>
+  <p>Every project lives in its own universe, with its own look. Pick a dimension, or swing through all of them.</p>
+ </div>
+ <div class="filters reveal" id="filters" role="tablist" aria-label="Project universes"></div>
+ <div class="panels" id="panels"></div>
+</section>
+
+<section class="section red reveal" id="city">
+ <h2>Let's build something remarkable.</h2>
+ <p>Have an idea, opportunity or project in mind? This is where our next story can begin.</p>
+ <div class="actions center"><a class="btn cream" href="mailto:you@example.com">Send a web-message</a></div>
+</section>
+
+<!-- Footer graffiti wall -->
+<footer class="wall">
+ <div class="tag t1">SWING BY AGAIN</div>
+ <div class="tag t2">© Arshdeep</div>
+</footer>
+
+<script type="module" src="main.js"></script>
+</body>
+</html>

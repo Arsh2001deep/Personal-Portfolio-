@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spider-Man | Your Friendly Neighbourhood Hero</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Bangers&family=Inter:wght@400;500;600;700;800;900&display=swap');
+  :root{--red:#e62429;--blue:#082b59;--ink:#071323;--cream:#fff4df}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--ink);color:white;font-family:Inter,Arial,sans-serif;overflow-x:hidden}
+  .site{min-height:100vh;position:relative;isolation:isolate;background:
+    radial-gradient(circle at 78% 30%,rgba(230,36,41,.22),transparent 28%),
+    linear-gradient(115deg,#061426 0%,#092b55 52%,#071323 100%)}
+  .halftone{position:absolute;inset:0;z-index:-1;opacity:.13;pointer-events:none;background-image:radial-gradient(#fff 1px,transparent 1.5px);background-size:8px 8px;mask-image:linear-gradient(90deg,transparent,black 70%)}
+  header{height:86px;display:flex;align-items:center;justify-content:space-between;padding:0 7vw;border-bottom:1px solid #ffffff20;position:relative;z-index:5}
+  .brand{font-family:Bangers,cursive;font-size:30px;letter-spacing:2px;color:white;text-decoration:none;text-shadow:3px 3px 0 var(--red)}
+  nav{display:flex;gap:30px}
+  nav a{color:#d9e4f3;text-decoration:none;font-size:11px;font-weight:800;letter-spacing:1.5px;transition:.2s}
+  nav a:hover{color:#ff555a}
+  .menu{display:none;background:none;border:0;color:white;font-size:26px}
+  .hero{min-height:calc(100vh - 86px);display:grid;grid-template-columns:1.05fr .95fr;align-items:center;padding:55px 7vw 80px;position:relative;overflow:hidden}
+  .copy{max-width:650px;z-index:2}
+  .eyebrow{display:inline-flex;align-items:center;gap:10px;color:#ff8588;font-size:11px;font-weight:900;letter-spacing:3px;text-transform:uppercase;margin-bottom:22px}
+  .eyebrow:before{content:"";width:34px;height:2px;background:var(--red)}
+  h1{font-family:Bangers,cursive;font-size:clamp(76px,10vw,150px);line-height:.82;letter-spacing:2px;text-transform:uppercase;text-shadow:5px 5px 0 var(--red),9px 9px 0 #00101f}
+  h1 span{display:block;color:#fff}
+  .sub{font-family:Bangers,cursive;font-size:clamp(26px,3vw,42px);letter-spacing:2px;color:#ff555a;margin:23px 0 16px}
+  .intro{max-width:500px;color:#c4d1e1;line-height:1.8;font-size:15px}
+  .actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:32px}
+  .btn{padding:15px 24px;text-decoration:none;font-size:11px;font-weight:900;letter-spacing:1.5px;text-transform:uppercase;clip-path:polygon(8% 0,100% 0,92% 100%,0 100%);transition:transform .2s,filter .2s}
+  .btn:hover{transform:translateY(-4px);filter:brightness(1.15)}
+  .primary{background:var(--red);color:white}
+  .secondary{border:1px solid #ffffff70;color:white;background:#ffffff0d}
+  .visual{height:min(690px,75vh);min-height:470px;position:relative;display:grid;place-items:center}
+  .burst{position:absolute;width:min(44vw,560px);aspect-ratio:1;background:var(--red);clip-path:polygon(50% 0%,58% 18%,76% 5%,75% 26%,97% 20%,85% 40%,100% 52%,78% 60%,91% 82%,67% 77%,56% 100%,45% 80%,25% 96%,27% 72%,3% 77%,18% 56%,0 43%,22% 37%,8% 16%,34% 24%);opacity:.95;filter:drop-shadow(18px 22px 0 #0008);transform:rotate(-8deg)}
+  .hero-art{position:relative;width:min(34vw,410px);height:min(53vw,520px);max-height:520px;min-width:280px;z-index:1;filter:drop-shadow(20px 22px 0 #0008);animation:float 4s ease-in-out infinite}
+  .body{position:absolute;left:19%;top:28%;width:62%;height:66%;background:linear-gradient(135deg,#f53b3f,#a80918 70%);border:7px solid #071323;border-radius:48% 48% 30% 30%;transform:rotate(-9deg);box-shadow:inset 0 0 0 3px #ff7777}
+  .head{position:absolute;left:27%;top:3%;width:48%;height:39%;background:linear-gradient(145deg,#ff5558,#b80d1b);border:7px solid #071323;border-radius:48% 48% 44% 44%;transform:rotate(-9deg);z-index:2;overflow:hidden}
+  .eye{position:absolute;top:37%;width:28%;height:17%;background:#f8fbff;border:5px solid #071323;transform:rotate(20deg);border-radius:80% 15% 80% 15%}
+  .eye.left{left:13%}.eye.right{right:13%;transform:scaleX(-1) rotate(20deg)}
+  .web-lines{position:absolute;inset:0;opacity:.5;background:repeating-linear-gradient(0deg,transparent 0 22px,#45050d 23px 25px),repeating-linear-gradient(90deg,transparent 0 25px,#45050d 26px 28px);mask-image:radial-gradient(ellipse at center,black 30%,transparent 73%)}
+  .spider{position:absolute;left:46%;top:44%;width:34px;height:64px;background:#071323;clip-path:polygon(50% 0,63% 28%,100% 14%,74% 43%,95% 70%,60% 57%,50% 100%,40% 57%,5% 70%,26% 43%,0 14%,37% 28%);z-index:3}
+  .arm{position:absolute;top:38%;width:24%;height:14%;background:#e92731;border:6px solid #071323;border-radius:50%;z-index:0}
+  .arm.left{left:2%;transform:rotate(35deg)}.arm.right{right:0;transform:rotate(-38deg)}
+  .leg{position:absolute;bottom:-3%;width:24%;height:43%;background:#124c8a;border:7px solid #071323;border-radius:30% 30% 18% 18%;z-index:-1}
+  .leg.left{left:27%;transform:rotate(13deg)}.leg.right{right:20%;transform:rotate(-18deg)}
+  .blue-panel{position:absolute;bottom:5%;left:8%;width:80%;height:26%;background:repeating-linear-gradient(135deg,#0c4b87 0 12px,#093565 12px 24px);border:6px solid #071323;border-radius:40% 40% 20% 20%;z-index:-1}
+  .web{position:absolute;right:5%;top:-8%;width:40%;height:70%;border-left:2px solid #ffffff90;transform:rotate(22deg);border-radius:50%;opacity:.65}
+  .web:before,.web:after{content:"";position:absolute;inset:0;border:1px solid #ffffff70;border-radius:50%;transform:rotate(45deg) scaleX(.55)}
+  .web:after{transform:rotate(-45deg) scaleX(.55)}
+  .caption{position:absolute;bottom:28px;right:7vw;font-family:Bangers,cursive;font-size:18px;letter-spacing:2px;color:#ffb6b7;transform:rotate(-5deg)}
+  .scroll{position:absolute;bottom:25px;left:7vw;color:#9fb1c8;font-size:9px;letter-spacing:2px;font-weight:800}
+  .scroll:after{content:" ↓";color:var(--red);font-size:17px}
+  .ticker{background:var(--cream);color:#111;padding:15px 0;overflow:hidden;transform:rotate(-1.2deg) scale(1.02);border-block:4px solid #111}
+  .ticker div{white-space:nowrap;font-family:Bangers,cursive;font-size:25px;letter-spacing:3px;animation:marquee 22s linear infinite}
+  .ticker span{padding:0 30px}.ticker b{color:var(--red)}
+  .below{padding:100px 7vw;text-align:center;background:#fff4df;color:#101820}
+  .below h2{font-family:Bangers,cursive;font-size:clamp(42px,6vw,72px);letter-spacing:2px}
+  .below p{max-width:650px;margin:15px auto 0;line-height:1.8;color:#465365}
+  @keyframes float{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-16px) rotate(2deg)}}
+  @keyframes marquee{to{transform:translateX(-50%)}}
+  @media(max-width:850px){header{padding:0 6vw}nav{gap:15px}.hero{grid-template-columns:1fr;padding:65px 7vw 90px}.copy{max-width:100%}.visual{height:520px;margin-top:10px}.burst{width:min(78vw,480px)}.hero-art{width:330px;height:460px}.caption{right:9vw}}
+  @media(max-width:560px){header{height:72px}nav{display:none;position:absolute;top:71px;left:0;right:0;padding:22px;background:#061426;flex-direction:column;text-align:center;border-bottom:1px solid #ffffff30}nav.open{display:flex}.menu{display:block}.hero{padding-top:55px}.visual{min-height:390px;height:420px}.hero-art{transform:scale(.82);transform-origin:center}.burst{width:85vw}h1{font-size:clamp(72px,20vw,112px)}.intro{font-size:14px}.caption{bottom:15px}.scroll{bottom:15px}}
+</style>
+</head>
+<body>
+<div class="site">
+  <div class="halftone"></div>
+  <header>
+    <a class="brand" href="#">SPIDER-MAN</a>
+    <nav id="nav">
+      <a href="#story">THE STORY</a><a href="#powers">POWERS</a><a href="#city">NEW YORK</a>
+    </nav>
+    <button class="menu" id="menu" aria-label="Toggle navigation">☰</button>
+  </header>
+  <main class="hero" id="story">
+    <div class="copy">
+      <div class="eyebrow">Your friendly neighbourhood hero</div>
+      <h1>With great <span>power</span></h1>
+      <div class="sub">Comes great responsibility.</div>
+      <p class="intro">A kid from Queens. A city that never sleeps. And one very important lesson: what makes a hero isn't the mask — it's what they choose to do when nobody is watching.</p>
+      <div class="actions">
+        <a class="btn primary" href="#powers">Explore the legend</a>
+        <a class="btn secondary" href="#city">Meet the city</a>
+      </div>
+    </div>
+    <div class="visual" aria-label="Original comic-inspired masked web-slinging hero illustration">
+      <div class="burst"></div><div class="web"></div>
+      <div class="hero-art">
+        <div class="arm left"></div><div class="arm right"></div>
+        <div class="leg left"></div><div class="leg right"></div><div class="blue-panel"></div>
+        <div class="body"><div class="web-lines"></div><div class="spider"></div></div>
+        <div class="head"><div class="web-lines"></div><div class="eye left"></div><div class="eye right"></div></div>
+      </div>
+      <div class="caption">THWIP! — into action</div>
+    </div>
+    <div class="scroll">SCROLL TO DISCOVER</div>
+  </main>
+  <div class="ticker"><div><span>⚡ <b>AGILITY</b></span><span>✦ RESPONSIBILITY</span><span>⚡ <b>COURAGE</b></span><span>✦ YOUR FRIENDLY NEIGHBOURHOOD HERO</span><span>⚡ <b>AGILITY</b></span><span>✦ RESPONSIBILITY</span><span>⚡ <b>COURAGE</b></span></div></div>
+</div>
+<section class="below" id="powers">
+  <h2>More than a mask.</h2>
+  <p>Quick reflexes. A curious mind. A stubborn belief that people are worth helping. The city needs all kinds of heroes — and every story starts with a choice.</p>
+</section>
+<section class="below" id="city" style="background:#e62429;color:white">
+  <h2>New York is calling.</h2>
+  <p style="color:#ffe1e1">The skyline is your playground. The neighbourhood is your responsibility. Keep looking up.</p>
+</section>
+<script>
+  const menu = document.getElementById('menu');
+  const nav = document.getElementById('nav');
+  menu.addEventListener('click', () => nav.classList.toggle('open'));
+  nav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => nav.classList.remove('open')));
+</script>
+</body>
+</html>

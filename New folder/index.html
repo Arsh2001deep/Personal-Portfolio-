@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arshdeep | The Amazing Portfolio</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Inter:wght@400;600;700;800;900&display=swap');
+:root{--red:#e62429;--blue:#0b3970;--ink:#061323;--cream:#fff3df}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--ink);color:#fff;font-family:Inter,Arial,sans-serif;overflow-x:hidden;cursor:none}
+a,button{cursor:none}
+.site{min-height:100vh;position:relative;isolation:isolate;background:radial-gradient(circle at 75% 35%,#e6242930,transparent 30%),linear-gradient(115deg,#061426,#092b55 55%,#071323)}
+.halftone{position:absolute;inset:0;z-index:-1;opacity:.13;pointer-events:none;background-image:radial-gradient(#fff 1px,transparent 1.5px);background-size:8px 8px}
+header{height:82px;display:flex;align-items:center;justify-content:space-between;padding:0 7vw;border-bottom:1px solid #ffffff25;position:relative;z-index:4}
+.brand{font:32px Bangers,cursive;letter-spacing:2px;color:#fff;text-decoration:none;text-shadow:3px 3px 0 var(--red)}
+nav{display:flex;gap:28px}
+nav a{font-size:11px;font-weight:900;letter-spacing:1.5px;color:#dce8f7;text-decoration:none}
+nav a:hover{color:#ff6266}
+.menu{display:none;color:white;background:none;border:0;font-size:25px}
+.hero{min-height:calc(100vh - 82px);display:grid;grid-template-columns:1.05fr .95fr;align-items:center;padding:55px 7vw 85px;gap:30px;position:relative}
+.copy{max-width:650px;z-index:2}
+.eyebrow{display:flex;align-items:center;gap:10px;color:#ff8588;font-size:11px;font-weight:900;letter-spacing:3px;text-transform:uppercase;margin-bottom:20px}
+.eyebrow:before{content:"";width:34px;height:2px;background:var(--red)}
+h1{font:clamp(76px,10vw,145px)/.82 Bangers,cursive;letter-spacing:2px;text-shadow:5px 5px 0 var(--red),9px 9px 0 #00101f}
+h1 span{display:block;color:#fff}
+.sub{font:clamp(27px,3vw,40px) Bangers,cursive;letter-spacing:2px;color:#ff555a;margin:24px 0 16px}
+.intro{max-width:500px;color:#c4d1e1;line-height:1.8;font-size:15px}
+.actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:30px}
+.btn{padding:15px 24px;text-decoration:none;font-size:11px;font-weight:900;letter-spacing:1.5px;text-transform:uppercase;clip-path:polygon(8% 0,100% 0,92% 100%,0 100%);transition:.2s}
+.btn:hover{transform:translateY(-4px);filter:brightness(1.15)}
+.primary{background:var(--red);color:white}.secondary{border:1px solid #ffffff70;color:white;background:#ffffff0d}
+.portrait-wrap{position:relative;display:grid;place-items:center;min-height:590px}
+.burst{position:absolute;width:min(43vw,540px);aspect-ratio:1;background:var(--red);clip-path:polygon(50% 0,58% 18%,76% 5%,75% 26%,97% 20%,85% 40%,100% 52%,78% 60%,91% 82%,67% 77%,56% 100%,45% 80%,25% 96%,27% 72%,3% 77%,18% 56%,0 43%,22% 37%,8% 16%,34% 24%);transform:rotate(-8deg);filter:drop-shadow(15px 20px 0 #0008)}
+.photo-frame{position:relative;width:min(340px,72%);aspect-ratio:4/5;z-index:1;padding:10px;background:var(--cream);border:7px solid #071323;box-shadow:15px 17px 0 #0009;transform:rotate(3deg);transition:transform .35s}
+.photo-frame:hover{transform:rotate(0) scale(1.025)}
+.photo-frame:before{content:"";position:absolute;inset:10px;border:2px solid var(--red);pointer-events:none;z-index:2}
+.photo-frame img{width:100%;height:100%;object-fit:cover;object-position:center 35%;display:block;filter:contrast(1.08) saturate(1.12)}
+.photo-frame:after{content:"";position:absolute;inset:10px;pointer-events:none;opacity:.18;background-image:radial-gradient(#071323 1px,transparent 1.5px);background-size:5px 5px;mix-blend-mode:multiply}
+.sticker{position:absolute;right:3%;bottom:12%;z-index:3;background:var(--cream);color:#111;border:4px solid #071323;padding:12px 18px;font:24px Bangers,cursive;letter-spacing:1px;transform:rotate(-8deg);box-shadow:5px 5px 0 #0008}
+.web-line{position:absolute;right:9%;top:0;width:35%;height:65%;border-left:2px solid #ffffff80;border-radius:50%;transform:rotate(24deg)}
+.scroll{position:absolute;bottom:25px;left:7vw;color:#9fb1c8;font-size:9px;letter-spacing:2px;font-weight:800}
+.scroll:after{content:" ↓";color:var(--red);font-size:17px}
+.ticker{background:var(--cream);color:#111;padding:14px 0;overflow:hidden;transform:rotate(-1deg) scale(1.02);border-block:4px solid #111}
+.ticker div{white-space:nowrap;font:25px Bangers,cursive;letter-spacing:3px;animation:marquee 22s linear infinite}
+.ticker span{padding:0 28px}.ticker b{color:var(--red)}
+.section{padding:95px 7vw;text-align:center;background:var(--cream);color:#101820}
+.section h2{font:clamp(42px,6vw,70px) Bangers,cursive;letter-spacing:2px}
+.section p{max-width:650px;margin:15px auto 0;line-height:1.8;color:#465365}
+.section.red{background:var(--red);color:#fff}.section.red p{color:#ffe1e1}
+#spider-cursor{position:fixed;left:0;top:0;width:38px;height:38px;z-index:99;pointer-events:none;transform:translate(-50%,-50%);filter:drop-shadow(2px 3px 1px #0009);transition:transform .08s linear}
+#spider-cursor svg{width:100%;height:100%;overflow:visible}
+#spider-cursor.clicking{transform:translate(-50%,-50%) scale(.72) rotate(18deg)}
+.web-pop{position:fixed;z-index:98;pointer-events:none;width:24px;height:24px;border:2px solid #fff;transform:translate(-50%,-50%) scale(.2);border-radius:50%;animation:webpop .45s ease-out forwards}
+@keyframes webpop{to{opacity:0;transform:translate(-50%,-50%) scale(3.4)}}
+@keyframes marquee{to{transform:translateX(-50%)}}
+@media(max-width:850px){.hero{grid-template-columns:1fr;padding-top:60px}.portrait-wrap{min-height:520px}.burst{width:min(78vw,480px)}}
+@media(max-width:560px){body{cursor:auto}a,button{cursor:pointer}header{height:70px;padding:0 6vw}nav{display:none;position:absolute;top:69px;left:0;right:0;padding:22px;background:#061426;flex-direction:column;text-align:center}nav.open{display:flex}.menu{display:block}.hero{padding:55px 7vw 80px}.portrait-wrap{min-height:440px}.photo-frame{width:min(290px,75%)}.sticker{right:0;bottom:8%}#spider-cursor{display:none}.scroll{bottom:15px}}
+@media(hover:none){body{cursor:auto}a,button{cursor:pointer}#spider-cursor{display:none}}
+</style>
+</head>
+<body>
+<div id="spider-cursor" aria-hidden="true">
+<svg viewBox="0 0 50 50">
+ <g stroke="#071323" stroke-width="4" stroke-linecap="round" fill="none">
+  <path d="M19 20 L8 10 L3 14 M17 25 L5 24 L2 29 M19 30 L9 39 L4 36 M31 20 L42 10 L47 14 M33 25 L45 24 L48 29 M31 30 L41 39 L46 36"/>
+ </g>
+ <ellipse cx="25" cy="28" rx="8" ry="12" fill="#111827" stroke="#fff" stroke-width="1.5"/>
+ <circle cx="25" cy="14" r="7" fill="#111827" stroke="#fff" stroke-width="1.5"/>
+ <circle cx="22" cy="12" r="1.8" fill="#e62429"/><circle cx="28" cy="12" r="1.8" fill="#e62429"/>
+</svg></div>
+<div class="site">
+ <div class="halftone"></div>
+ <header><a class="brand" href="#">ARSHDEEP // HERO FILES</a>
+  <nav id="nav"><a href="#story">THE STORY</a><a href="#powers">THE JOURNEY</a><a href="#city">CONTACT</a></nav>
+  <button class="menu" id="menu" aria-label="Toggle navigation">☰</button>
+ </header>
+ <main class="hero" id="story">
+  <div class="copy">
+   <div class="eyebrow">A new origin story begins</div>
+   <h1>Meet <span>Arshdeep.</span></h1>
+   <div class="sub">One life. A thousand possibilities.</div>
+   <p class="intro">Every hero has an origin story. This is mine — a journey through technology, creativity, experiments, ambitions and everything still waiting to happen.</p>
+   <div class="actions"><a class="btn primary" href="#powers">Explore my story</a><a class="btn secondary" href="#city">Get in touch</a></div>
+  </div>
+  <div class="portrait-wrap">
+   <div class="burst"></div><div class="web-line"></div>
+   <div class="photo-frame"><img src="Me.jpeg" alt="Portrait of Arshdeep"></div>
+   <div class="sticker">THE MAIN CHARACTER!</div>
+  </div>
+  <div class="scroll">SCROLL TO DISCOVER</div>
+ </main>
+ <div class="ticker"><div><span>✦ <b>CURIOUS MIND</b></span><span>⚡ BUILDING THINGS</span><span>✦ ALWAYS LEARNING</span><span>⚡ THE NEXT CHAPTER</span><span>✦ <b>CURIOUS MIND</b></span><span>⚡ BUILDING THINGS</span><span>✦ ALWAYS LEARNING</span></div></div>
+</div>
+<section class="section" id="powers"><h2>The story is still being written.</h2><p>From software and automation to AI, aerospace and ambitious side projects — this is where the different chapters of my journey come together.</p></section>
+<section class="section red" id="city"><h2>Let's build something remarkable.</h2><p>Have an idea, opportunity or project in mind? This is where our next story can begin.</p></section>
+<script>
+const menu=document.getElementById('menu'),nav=document.getElementById('nav');
+menu.addEventListener('click',()=>nav.classList.toggle('open'));
+nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
+const spider=document.getElementById('spider-cursor');
+if(window.matchMedia('(hover:hover) and (pointer:fine)').matches){
+ window.addEventListener('mousemove',e=>{spider.style.left=e.clientX+'px';spider.style.top=e.clientY+'px';});
+ window.addEventListener('mousedown',e=>{
+  spider.classList.add('clicking');
+  const pop=document.createElement('span');pop.className='web-pop';pop.style.left=e.clientX+'px';pop.style.top=e.clientY+'px';document.body.appendChild(pop);
+  setTimeout(()=>{spider.classList.remove('clicking');pop.remove()},460);
+ });
+}
+</script>
+</body></html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arshdeep | The Amazing Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bangers&family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="loading">
+
+<!-- Page-load wipe -->
+<div class="wipe" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><span>LOADING UNIVERSE…</span></div>
+<div class="progress" aria-hidden="true"></div>
+<div id="spider-cursor" aria-hidden="true"></div>
+
+<!-- Graffiti filter shared by both street-art characters -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+ <filter id="spray"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.4"/></filter>
+</svg>
+
+<!-- LEGO Spider-Man (graffiti), hanging upside-down from the top of the page -->
+<div class="hang" id="hang" aria-hidden="true">
+ <div class="thread"></div>
+ <svg class="lego" viewBox="0 0 120 210" filter="url(#spray)">
+  <g transform="rotate(180 60 105)" stroke="#061323" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
+   <rect x="47" y="6" width="26" height="12" rx="3" fill="#e62429"/>
+   <rect x="38" y="16" width="44" height="34" rx="9" fill="#e62429"/>
+   <path d="M44 28 L58 33 L56 41 L44 37Z M76 28 L62 33 L64 41 L76 37Z" fill="#fff"/>
+   <path d="M60 17V50M40 30H80M44 42H76" stroke-width="1.6" fill="none"/>
+   <path d="M30 54H90L84 108H36Z" fill="#e62429"/>
+   <path d="M36 88H84L84 108H36Z" fill="#0b3970"/>
+   <path d="M60 58L52 76H68ZM60 76V92" stroke-width="2" fill="#061323"/>
+   <rect x="14" y="56" width="16" height="46" rx="6" fill="#e62429" transform="rotate(14 22 56)"/>
+   <rect x="90" y="56" width="16" height="46" rx="6" fill="#e62429" transform="rotate(-14 98 56)"/>
+   <circle cx="14" cy="104" r="8" fill="#0b3970"/><circle cx="106" cy="104" r="8" fill="#0b3970"/>
+   <rect x="36" y="108" width="22" height="64" rx="5" fill="#0b3970"/>
+   <rect x="62" y="108" width="22" height="64" rx="5" fill="#0b3970"/>
+   <rect x="32" y="170" width="28" height="14" rx="5" fill="#e62429"/>
+   <rect x="60" y="170" width="28" height="14" rx="5" fill="#e62429"/>
+  </g>
+  <g fill="#e62429" stroke="none"><rect x="46" y="178" width="5" height="24" rx="2.5"/><rect x="72" y="178" width="5" height="14" rx="2.5"/></g>
+ </svg>
+</div>
+
+<div class="site">
+ <div class="halftone"></div>
+ <header>
+  <a class="brand" href="#story">ARSHDEEP // HERO FILES</a>
+  <nav id="nav"><a href="#story">THE STORY</a><a href="#powers">THE JOURNEY</a><a href="#multiverse">THE MULTIVERSE</a><a href="#city">CONTACT</a></nav>
+  <button class="menu" id="menu" aria-label="Toggle navigation">☰</button>
+ </header>
+
+ <main class="hero" id="story">
+  <div class="copy">
+   <div class="eyebrow">A new origin story begins</div>
+   <h1 class="glitch" data-t="Meet">Meet <span data-t="Arshdeep.">Arshdeep.</span></h1>
+   <div class="sub">One life. A thousand possibilities.</div>
+   <p class="intro">Every hero has an origin story. This is mine — a journey through technology, creativity, experiments, ambitions and everything still waiting to happen.</p>
+   <div class="actions"><a class="btn primary" href="#multiverse">See my universes</a><a class="btn secondary" href="#city">Get in touch</a></div>
+  </div>
+  <div class="portrait-wrap">
+   <div class="burst"></div><div class="web-line"></div>
+   <div class="photo-frame"><img src="Me.jpeg" alt="Portrait of Arshdeep"></div>
+   <div class="sticker">THE MAIN CHARACTER!</div>
+  </div>
+  <div class="scroll">SCROLL TO DISCOVER</div>
+ </main>
+
+ <div class="ticker"><div>
+  <span>✦ <b>CURIOUS MIND</b></span><span>⚡ BUILDING THINGS</span><span>✦ ALWAYS LEARNING</span><span>⚡ THE NEXT CHAPTER</span>
+  <span>✦ <b>CURIOUS MIND</b></span><span>⚡ BUILDING THINGS</span><span>✦ ALWAYS LEARNING</span><span>⚡ THE NEXT CHAPTER</span>
+ </div></div>
+</div>
+
+<section class="section reveal" id="powers">
+ <h2>The story is still being written.</h2>
+ <p>From software and automation to AI, aerospace and ambitious side projects — this is where the different chapters of my journey come together.</p>
+</section>
+
+<!-- THE MULTIVERSE: projects are data-driven from js/projects.js -->
+<section class="multiverse" id="multiverse">
+ <div class="mv-head reveal">
+  <h2>The Multiverse</h2>
+  <p>Every project lives in its own universe, with its own look. Pick a dimension, or swing through all of them.</p>
+ </div>
+ <div class="filters reveal" id="filters" role="tablist" aria-label="Project universes"></div>
+ <div class="panels" id="panels"></div>
+</section>
+
+<section class="section red reveal" id="city">
+ <h2>Let's build something remarkable.</h2>
+ <p>Have an idea, opportunity or project in mind? This is where our next story can begin.</p>
+ <div class="actions center"><a class="btn cream" href="mailto:you@example.com">Send a web-message</a></div>
+</section>
+
+<!-- Footer wall: Gwen (Ghost-Spider) crouched on the ledge -->
+<footer class="wall">
+ <div class="tag t1">SWING BY AGAIN</div>
+ <div class="tag t2">© Arshdeep</div>
+ <svg class="gwen" viewBox="0 0 200 250" filter="url(#spray)" aria-hidden="true">
+  <circle cx="100" cy="120" r="88" fill="#ff5fa8" opacity=".55"/><circle cx="130" cy="140" r="70" fill="#35e0e6" opacity=".5"/>
+  <g stroke="#061323" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
+   <path d="M62 196 L88 150 L128 160 L150 214 L120 218 L106 184 L84 214Z" fill="#fff"/>
+   <path d="M64 120 Q60 160 96 168 Q132 160 128 120Z" fill="#fff"/>
+   <path d="M118 124 L162 150 L152 166 L112 146Z" fill="#fff"/>
+   <path d="M76 128 L46 168 L60 180 L88 148Z" fill="#fff"/>
+   <path d="M96 168 L62 206 L38 198 L50 218 L98 222Z" fill="#fff"/>
+   <path d="M70 70 Q96 20 126 62 L134 112 Q100 138 66 112Z" fill="#061323"/>
+   <path d="M76 74 Q96 36 120 70 L124 108 Q98 128 74 108Z" fill="#fff"/>
+   <path d="M64 70 Q60 30 98 22 Q140 30 132 74 Q98 44 64 70Z" fill="#fff"/>
+   <path d="M64 86 L56 118 M132 86 L142 118" stroke="#ff5fa8" stroke-width="7"/><path d="M69 90 L63 120 M127 90 L135 120" stroke="#35e0e6" stroke-width="4"/>
+   <path d="M82 84 L98 90 L96 98 L80 93Z M116 84 L100 90 L102 98 L118 93Z" fill="#061323" stroke-width="2"/>
+   <path d="M91 128 L106 128 L98 144Z" fill="#061323" stroke-width="2"/>
+  </g>
+  <g fill="#ff5fa8"><rect x="74" y="222" width="5" height="22" rx="2.5"/><rect x="132" y="218" width="5" height="14" rx="2.5"/></g>
+ </svg>
+</footer>
+
+<script type="module" src="main.js"></script>
+</body>
+</html>
