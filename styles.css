@@ -613,13 +613,24 @@ body:not(.loading) .glitch span:after,
     color: #ffe1e1;
 }
 
+/* Keep sections visible by default */
 .reveal {
-    clip-path: polygon(0 0,0 0,-12% 100%,0 100%);
-    transition: clip-path .9s cubic-bezier(.7,0,.2,1);
+    clip-path: none;
+    opacity: 1;
 }
 
+/* Reveal animation when JavaScript adds .in */
 .reveal.in {
-    clip-path: polygon(0 0,112% 0,100% 100%,0 100%);
+    animation: section-reveal .9s cubic-bezier(.7,0,.2,1) both;
+}
+
+@keyframes section-reveal {
+    from {
+        clip-path: polygon(0 0,0 0,-12% 100%,0 100%);
+    }
+    to {
+        clip-path: polygon(0 0,112% 0,100% 100%,0 100%);
+    }
 }
 
 /* ---------- MULTIVERSE ---------- */
