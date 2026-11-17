@@ -1276,3 +1276,19 @@ body:not(.loading) .glitch span:after,
         clip-path: none;
     }
 }
+
+
+/* FIX: Force the missing sections to remain visible */
+#powers,
+#city,
+#powers.reveal,
+#city.reveal,
+#powers.reveal.in,
+#city.reveal.in {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    clip-path: none !important;
+    animation: none !important;
+    min-height: 250px;
+}
