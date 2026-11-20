@@ -613,12 +613,12 @@ body:not(.loading) .glitch span:after,
     color: #ffe1e1;
 }
 
-/* Sections remain visible even before JavaScript runs */
+/* Sections are visible by default - safe if JavaScript fails */
 .reveal {
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    clip-path: none;
 }
 
-/* Initial reveal state only when JavaScript is active */
+/* Hide only when JS is ready to handle reveal animations */
 .js-ready .reveal:not(.in) {
     clip-path: polygon(0 0, 0 0, -12% 100%, 0 100%);
 }
@@ -632,6 +632,7 @@ body:not(.loading) .glitch span:after,
     from {
         clip-path: polygon(0 0, 0 0, -12% 100%, 0 100%);
     }
+
     to {
         clip-path: polygon(0 0, 112% 0, 100% 100%, 0 100%);
     }

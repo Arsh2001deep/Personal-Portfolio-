@@ -3,7 +3,7 @@
 initCursor(document.getElementById('spider-cursor'));
 const $ = s => document.querySelector(s);
 const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-document.documentElement.classList.add('js-ready');
+// document.documentElement.classList.add('js-ready');
 
 // 1. Page-load wipe
 addEventListener('load', () => setTimeout(() => document.body.classList.remove('loading'), reduce ? 0 : 900));
@@ -13,9 +13,24 @@ const nav = $('#nav');
 $('#menu').addEventListener('click', () => nav.classList.toggle('open'));
 nav.addEventListener('click', e => e.target.matches('a') && nav.classList.remove('open'));
 
+// // 3. Scroll reveals
+// const io = new IntersectionObserver(es => es.forEach(e => e.isIntersecting && (e.target.classList.add('in'), io.unobserve(e.target))), { threshold: .15 });
+// document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
 // 3. Scroll reveals
-const io = new IntersectionObserver(es => es.forEach(e => e.isIntersecting && (e.target.classList.add('in'), io.unobserve(e.target))), { threshold: .15 });
+const io = new IntersectionObserver(es => {
+    es.forEach(e => {
+        if (e.isIntersecting) {
+            e.target.classList.add('in');
+            io.unobserve(e.target);
+        }
+    });
+}, { threshold: 0.15 });
+
 document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+// Activate reveal animation only after observer is ready
+document.documentElement.classList.add('js-ready');
 
 // 4. Multiverse: render filters + comic panels from data
 const filters = $('#filters'), panels = $('#panels');
