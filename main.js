@@ -19,7 +19,9 @@ nav.addEventListener('click', e => e.target.matches('a') && nav.classList.remove
 
 
 // 3. Scroll reveals
-if ("IntersectionObserver" in window && !reduce) {
+const revealElements = document.querySelectorAll('.reveal');
+
+if ('IntersectionObserver' in window) {
     const io = new IntersectionObserver(entries => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -28,21 +30,19 @@ if ("IntersectionObserver" in window && !reduce) {
             }
         });
     }, {
-        threshold: 0.15
+        threshold: 0.05,
+        rootMargin: '0px 0px -50px 0px'
     });
 
-    document.querySelectorAll('.reveal').forEach(el => {
-        io.observe(el);
-    });
-
-    // Activate animations after observer setup
-    document.documentElement.classList.add('js-ready');
+    revealElements.forEach(el => io.observe(el));
 } else {
-    // Fallback: keep everything visible
-    document.querySelectorAll('.reveal').forEach(el => {
-        el.classList.add('in');
-    });
+    // Fallback for browsers without IntersectionObserver
+    revealElements.forEach(el => el.classList.add('in'));
 }
+
+// Activate reveal animation after setting up observation
+document.documentElement.classList.add('js-ready');
+
 
 // 4. Multiverse: render filters + comic panels from data
 const filters = $('#filters'), panels = $('#panels');
