@@ -3,6 +3,7 @@
 initCursor(document.getElementById('spider-cursor'));
 const $ = s => document.querySelector(s);
 const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+document.documentElement.classList.add('js-ready');
 
 // 1. Page-load wipe
 addEventListener('load', () => setTimeout(() => document.body.classList.remove('loading'), reduce ? 0 : 900));

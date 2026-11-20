@@ -613,23 +613,27 @@ body:not(.loading) .glitch span:after,
     color: #ffe1e1;
 }
 
-/* Keep sections visible by default */
+/* Sections remain visible even before JavaScript runs */
 .reveal {
-    clip-path: none;
-    opacity: 1;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 }
 
-/* Reveal animation when JavaScript adds .in */
-.reveal.in {
-    animation: section-reveal .9s cubic-bezier(.7,0,.2,1) both;
+/* Initial reveal state only when JavaScript is active */
+.js-ready .reveal:not(.in) {
+    clip-path: polygon(0 0, 0 0, -12% 100%, 0 100%);
+}
+
+/* Reveal animation */
+.js-ready .reveal.in {
+    animation: section-reveal .9s cubic-bezier(.7, 0, .2, 1) forwards;
 }
 
 @keyframes section-reveal {
     from {
-        clip-path: polygon(0 0,0 0,-12% 100%,0 100%);
+        clip-path: polygon(0 0, 0 0, -12% 100%, 0 100%);
     }
     to {
-        clip-path: polygon(0 0,112% 0,100% 100%,0 100%);
+        clip-path: polygon(0 0, 112% 0, 100% 100%, 0 100%);
     }
 }
 
@@ -1279,6 +1283,8 @@ body:not(.loading) .glitch span:after,
 
 
 /* FIX: Force the missing sections to remain visible */
+
+/* 
 #powers,
 #city,
 #powers.reveal,
@@ -1291,4 +1297,4 @@ body:not(.loading) .glitch span:after,
     clip-path: none !important;
     animation: none !important;
     min-height: 250px;
-}
+} */
